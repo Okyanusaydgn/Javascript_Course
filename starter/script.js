@@ -135,3 +135,62 @@ const markHigherBMI = BMIMark > BMIJohn;
 
 console.log(BMIMark, BMIJohn, markHigherBMI);
 */
+
+/*
+// Değişken tanımlamaları
+const firstName = "Okyanus";
+const job = "developer";
+const birthYear = 1999;
+const year = 2037;
+
+// 🔸 Eski yöntemle string birleştirme (concatenation)
+const okyanus =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(okyanus); // I'm Okyanus, a 38 years old developer!
+
+// 🔹 Template literals ile string oluşturma (ES6+ yöntemi)
+const okyanusNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}`;
+console.log(okyanusNew); // I'm Okyanus, a 38 year old developer
+
+// 🔸 Eski yöntemle çok satırlı string (escape karakteriyle: \n\)
+console.log(
+  "String with \n\
+   multiple \n\
+  lines"
+);
+
+// 🔹 Template literals ile çok satırlı string (daha okunabilir)
+console.log(`String
+  multiple
+  lines`);
+*/
+
+/*
+// Sarah'ın yaşını tanımlıyoruz
+const age = 15;
+
+// Eğer yaş 18 veya daha fazlaysa ehliyet alabilir
+if (age >= 18) {
+  console.log("Sarah can start driving licence 🚗");
+} else {
+  // Eğer yaş 18'den küçükse, kaç yıl beklemesi gerektiğini hesaplıyoruz
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years 🙂`);
+}
+
+
+// Doğum yılını tanımlıyoruz
+const birthYear = 1998;
+
+let century; // century değişkenini tanımlıyoruz ama henüz bir değer vermedik
+
+// Doğum yılı 2000 veya daha küçükse 20. yüzyıl, büyükse 21. yüzyıl kabul ediyoruz
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+// Sonuç olarak hangi yüzyılda doğduğunu yazdırıyoruz
+console.log(century);
+*/
