@@ -55,6 +55,7 @@ const birthYear = 1991;
 // const job; // ❌ Hata: Initialization required
 */
 
+/*
 // ✅ Math Operators (Matematiksel Operatörler)
 const now = 2037;
 const ageOkyanus = now - 1991;
@@ -87,3 +88,50 @@ const isFullAge = ageSarah >= 18; // Boolean değer olarak saklandı
 // ✅ Daha karmaşık bir karşılaştırma
 console.log(now - 1991 > now - 2018);
 // Aynı şekilde: ageOkyanus > ageSarah demektir
+*/
+/*
+📌 Operator Precedence ve Assignment
+
+- 2037 yılında yaş hesaplaması
+- x ve y'ye aynı değerin atanması
+- Ortalama yaşın bulunması
+*/
+
+/*
+const now = 2037;
+const ageOkyanus = now - 1991;
+const ageSarah = now - 2018;
+
+// Karşılaştırma: Okyanus mu daha yaşlı?
+console.log(now - 1991 > now - 2018);
+
+let x, y;
+x = y = 25 - 10 - 5; // İşlem: 25 - 10 = 15, 15 - 5 = 10 → x = y = 10
+console.log(x, y);
+
+const averageAge = (ageOkyanus + ageSarah) / 2;
+console.log(ageOkyanus, ageSarah, averageAge);
+*/
+
+/*
+📌 BMI (Vücut Kitle İndeksi) Karşılaştırması
+
+- Mark ve John'un BMI değerleri hesaplanıyor
+- Daha yüksek BMI'ye sahip kişi belirleniyor
+*/
+/*
+// Kilo ve boy bilgileri
+const massMark = 95;
+const heightMark = 1.88;
+const massJohn = 85;
+const heightJohn = 1.76;
+
+// BMI hesaplamaları
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+// Karşılaştırma: Mark'ın BMI değeri John'dan yüksek mi?
+const markHigherBMI = BMIMark > BMIJohn;
+
+console.log(BMIMark, BMIJohn, markHigherBMI);
+*/
