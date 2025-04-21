@@ -320,6 +320,7 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 //   console.log("Both win the trophy!");
 // }
 
+/*
 // BONUS 1
 // 🧮 Ortalama skor hesaplama
 const scoreDolphins = (97 + 112 + 80) / 3; // 🐬 Dolphins'in puan ortalaması
@@ -340,4 +341,50 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log("🤝 It's a draw! Both win the trophy!");
 } else {
   console.log("❌ No one wins the trophy. Minimum score of 100 not reached.");
+}
+*/
+/*
+const day = "monday";
+
+// 🔄 switch yapısı ile gün kontrolü
+switch (day) {
+  case "monday": // 📅 Pazartesi günü
+    console.log("📘 Plan a course structure"); // Kurs yapısını planla
+    console.log("👨‍💻 Go to coding meetup"); // Kodlama etkinliğine katıl
+    break;
+  case "tuesday": // 📅 Salı günü
+    console.log("🎥 Prepare theory videos"); // Teorik videolar hazırla
+    break;
+  case "wednesday": // 📅 Çarşamba günü
+  case "thursday":  // 📅 Perşembe günü
+    console.log("🧑‍💻 Write code examples"); // Kod örnekleri yaz
+    break;
+  case "friday": // 📅 Cuma günü
+    console.log("🎬 Record videos"); // Videoları kaydet
+    break;
+  case "saturday": // 📅 Cumartesi
+  case "sunday":   // 📅 Pazar
+    console.log("😎 Enjoy the weekend :D"); // Hafta sonunun tadını çıkar!
+    break;
+  default:
+    console.log("❌ Not a valid day!"); // Geçersiz gün
+}
+*/
+// 🧠 if-else alternatifi
+
+const day = "monday";
+
+if (day === "monday") {
+  console.log("📘 Plan a course structure");
+  console.log("👨‍💻 Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("🎥 Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("🧑‍💻 Write code examples");
+} else if (day === "friday") {
+  console.log("🎬 Record videos");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("😎 Enjoy the weekend :D");
+} else {
+  console.log("❌ Not a valid day!");
 }
