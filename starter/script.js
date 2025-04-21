@@ -235,7 +235,7 @@ console.log(n);
 */
 
 // 5 falsy values: 0, '', undefined, null, NaN
-
+/*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean("Okyanus"));
@@ -255,4 +255,89 @@ if (height) {
   console.log("YAY! Height is defined");
 } else {
   console.log("Height is UNDEFINED");
+}
+*/
+
+/*
+const age = 18;
+if (age === 18) console.log("You just became an adult :d (strict)");
+
+if (age == 18) console.log("You just became an adult :d(loose)");
+
+const favourite = Number(prompt("What's your favourite number ?"));
+
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 23) {
+  console.log("Cool 23 is an amazing number!");
+} else if (favourite === 7) {
+  console.log("7 is also a cool number");
+} else if (favourite === 9) {
+  console.log("9 is also a cool number");
+} else {
+  console.log("Number is not 23 or 7.");
+}
+
+if (favourite !== 23) console.log("Why not 23?");
+*/
+
+/*
+const hasDriversLicence = true; // ✅ A: Ehliyeti var mı?
+const hasGoodVision = true; // 👁️ B: Görüşü iyi mi?
+
+// 🔀 AND operatörü: Her iki koşul da true mu?
+console.log(hasDriversLicence && hasGoodVision); // 👉 true
+
+// ➕ OR operatörü: En az biri true mu?
+console.log(hasDriversLicence || hasGoodVision); // 👉 true
+
+// ❗ NOT operatörü: Ehliyeti yok mu?
+console.log(!hasDriversLicence); // 👉 false
+
+// const isTired = false; // 😴 C: Yorgun mu?
+
+// 🔁 OR ile üç durumdan biri true mu diye kontrol ediyoruz
+console.log(hasDriversLicence || hasGoodVision || isTired); // 👉 true
+
+// 🔍 Tüm şartlar sağlanıyor mu?
+if (hasDriversLicence && hasGoodVision && !isTired) {
+  console.log("Sarah is able to drive! 🚗✅"); // 🟢 Şartlar uygunsa Sarah sürebilir
+} else {
+  console.log("Someone else should drive... 🚫🛑"); // 🔴 Aksi halde başka biri sürsün
+}
+*/
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas) {
+//   console.log("Dolphins win the trophy");
+// } else if (scoreKoalas > scoreDolphins) {
+//   console.log("Koalas win the trophy");
+// } else if (scoreDolphins === scoreKoalas) {
+//   console.log("Both win the trophy!");
+// }
+
+// BONUS 1
+// 🧮 Ortalama skor hesaplama
+const scoreDolphins = (97 + 112 + 80) / 3; // 🐬 Dolphins'in puan ortalaması
+const scoreKoalas = (109 + 95 + 50) / 3; // 🐨 Koalas'ın puan ortalaması
+console.log("🐬 Dolphins average score:", scoreDolphins);
+console.log("🐨 Koalas average score:", scoreKoalas);
+
+// 🏆 Kazananı belirleme şartları
+if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+  console.log("🏆 Dolphins win the trophy!");
+} else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+  console.log("🏆 Koalas win the trophy!");
+} else if (
+  scoreDolphins === scoreKoalas &&
+  scoreDolphins >= 100 &&
+  scoreKoalas >= 100
+) {
+  console.log("🤝 It's a draw! Both win the trophy!");
+} else {
+  console.log("❌ No one wins the trophy. Minimum score of 100 not reached.");
 }
