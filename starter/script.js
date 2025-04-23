@@ -370,6 +370,7 @@ switch (day) {
     console.log("❌ Not a valid day!"); // Geçersiz gün
 }
 */
+/*
 // 🧠 if-else alternatifi
 
 const day = "monday";
@@ -388,3 +389,64 @@ if (day === "monday") {
 } else {
   console.log("❌ Not a valid day!");
 }
+*/
+
+////////////////////////////////
+/*
+// 🎯 Statements and Expressions (İfadeler ve deyimler)
+
+// Bu ifadeler (expressions) değer üretir:
+3 + 4;               // ➡️ 7
+1991;               // ➡️ sayı değeri
+true && false && !false; // ➡️ false
+
+// Bu bir statement (bir işlem, komut):
+if (23 > 18) {
+  const str = "23 is bigger"; // Bu da bir statement
+  console.log(str); // ➡️ "23 is bigger"
+}
+
+// Bir değişken tanımlayıp ifadeyi içinde kullanalım:
+const me = "Jonas";
+console.log(`I'm ${2037 - 1991} years old, ${me}`); // ➡️ I'm 46 years old, Jonas
+
+// 🧃 Ternary Operator (Koşullu ifade) ile içecek seçme örneği
+
+const age = 23;
+
+// Yalnızca loglamak istersen:
+age >= 18
+  ? console.log("I like to drink wine 🍷")
+  : console.log("I like to drink water 💧");
+
+// Ternary ile değer atama:
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink); // ➡️ wine
+
+// Aynı işlemi if/else ile yaparsak:
+let drink2;
+if (age >= 18) {
+  drink2 = "wine";
+} else {
+  drink2 = "water";
+}
+console.log(drink2); // ➡️ wine
+
+// Template literal içinde doğrudan ternary kullanımı:
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+
+// ✅ Ek örnek: Fiyat hesaplama
+const price = 150;
+const discount = price > 100 ? price * 0.1 : 0;
+console.log(`Discount: $${discount}, Final price: $${price - discount}`);
+
+// ✅ Ek örnek: Kullanıcı adı kontrolü
+const username = "admin";
+console.log(`${username === "admin" ? "Welcome back, boss!" : "Hello, user!"}`);
+*/
+
+const bill = 275;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+);
