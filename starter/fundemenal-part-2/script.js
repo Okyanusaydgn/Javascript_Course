@@ -91,3 +91,25 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 console.log(yearsUntilRetirement(1999, "Okyanus"));
 console.log(yearsUntilRetirement(1991, "Jonas"));
 */
+
+/*
+// 🔧 Helper function to cut fruit into 4 pieces
+function cutPieces(fruit) {
+  return fruit * 4;
+}
+
+// 🍹 Main function to process fruits into juice
+function fruitProcessor(apples, oranges) {
+  // Cutting each fruit into pieces
+  const applePieces = cutPieces(apples);
+  const orangePieces = cutPieces(oranges);
+
+  // Creating the juice string with the pieces
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+// 🧪 Testing the function by calling it
+console.log(fruitProcessor(2, 3)); 
+// Output: Juice with 8 pieces of apple and 12 pieces of orange.
+*/
