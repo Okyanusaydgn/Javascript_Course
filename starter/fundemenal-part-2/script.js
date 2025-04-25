@@ -113,3 +113,56 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(2, 3)); 
 // Output: Juice with 8 pieces of apple and 12 pieces of orange.
 */
+
+/*
+// Yaşa göre yıl hesaplayan fonksiyon
+const calcAge = function (birthYear) {
+  return 2037 - birthYear; // 2037'den doğum yılını çıkararak yaşı buluyoruz
+};
+
+// Emekliliğe kaç yıl kaldığını hesaplayan fonksiyon
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear); // Yaşı hesaplıyoruz
+  const retirement = 65 - age; // Emekliliğe kalan yılı buluyoruz
+
+  // Eğer emekliliğe yıl kaldıysa
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years`); // Bilgilendirme mesajı
+    return retirement; // Kalan yıl geri döndürülüyor
+  } else {
+    // Eğer kişi zaten emekli olmuşsa
+    console.log(`${firstName} has already retired.`); // Bilgilendirme mesajı
+    return -1; // -1 ile emekli olduğunu belirtiyoruz
+  }
+};
+
+// Fonksiyonu çağırıyoruz ve sonucu konsola yazdırıyoruz
+console.log(yearsUntilRetirement(1991, "Okyanus")); // 2037 - 1991 = 46 yaşında, 19 yıl kaldı
+console.log(yearsUntilRetirement(1970, "Mike"));    // 2037 - 1970 = 67 yaşında, emekli olmuş
+*/
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+// Test 1
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`🏆 Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`🏆 Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log("⚖️ No team win...");
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+checkWinner(576, 111);
+
+// Test 2
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+console.log(scoreDolphins, scoreKoalas);
+checkWinner(scoreDolphins, scoreKoalas);
