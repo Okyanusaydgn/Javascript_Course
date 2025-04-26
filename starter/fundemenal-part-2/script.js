@@ -271,6 +271,7 @@ if (friends.includes("Steven")) {
 }
 */
 
+/*
 // Bahşiş hesaplama fonksiyonu
 const calcTip = function (bill) {
   // Fatura 50 ile 300 arasında ise %15, değilse %20 bahşiş hesaplanıyor
@@ -291,3 +292,76 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 // Sonuçları ekrana bastırma
 console.log(bills, tips, totals);
+*/
+
+/*
+const okyanusArray = [
+  "Okyanus",
+  "Aydogan",
+  "2037-1999",
+  "developer",
+  ["Michael", "Peter", "Seven"],
+];
+
+const okyanus = {
+  firstName: "Okyanus",
+  lastName: "Aydogan",
+  age: 2037 - 1991,
+  job: "developer",
+  friends: ["Michael", "Peter", "Steven"],
+};
+*/
+// Bir nesne (object) oluşturuyoruz
+const okyanus = {
+  firstName: "Okyanus",
+  lastName: "Aydogan",
+  age: 2037 - 1991,
+  job: "developer",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+// Nesneyi ekrana yazdırıyoruz
+console.log(okyanus);
+
+// Dot notation ile lastName'e erişiyoruz
+console.log(okyanus.lastName);
+
+// Bracket notation ile lastName'e erişiyoruz
+console.log(okyanus["lastName"]);
+
+// Dinamik bir şekilde property ismini birleştirerek erişiyoruz
+const nameKey = "Name";
+console.log(okyanus["first" + nameKey]); // "firstName" oluyor
+console.log(okyanus["last" + nameKey]); // "lastName" oluyor
+
+// Kullanıcıdan bir bilgi almak için prompt kullanıyoruz
+const interestedIn = prompt(
+  "What do you want to know about Okyanus? Choose between firstName, lastName, age, job, and friends"
+);
+
+// Kullanıcının istediği bilgi varsa gösteriyoruz, yoksa uyarıyoruz
+if (okyanus[interestedIn]) {
+  console.log(okyanus[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job, and friends."
+  );
+}
+
+// Nesneye yeni özellikler ekliyoruz
+okyanus.location = "Turkey"; // Dot notation ile
+okyanus["linkedn"] = "okyanusaydgnlink.co"; // Bracket notation ile
+console.log(okyanus);
+
+// Challenge:
+// "Okyanus has 3 friends, and his best friend is called Michael"
+
+// Dot Notation Kullanımı
+console.log(
+  `${okyanus.firstName} has ${okyanus.friends.length} friends, and his best friend is called ${okyanus.friends[0]}`
+);
+
+// Bracket Notation ile Aynı Örnek:
+console.log(
+  `${okyanus["firstName"]} has ${okyanus["friends"].length} friends, and his best friend is called ${okyanus["friends"][0]}`
+);
