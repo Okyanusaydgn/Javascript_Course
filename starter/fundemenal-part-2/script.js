@@ -170,45 +170,124 @@ console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 */
 
+/*
+// 3 farklı kişiyi ayrı değişkenlerde tanımlıyoruz
 const friend1 = "Michael";
 const friend2 = "Steven";
 const friend3 = "Peter";
 
+// Aynı kişileri bir dizi (array) içerisinde topluyoruz
 const friends = ["Michael", "Steven", "Peter"];
-console.log(friends);
+console.log(friends); // ["Michael", "Steven", "Peter"]
 
+// Farklı bir yöntemle (new Array) yıl bilgilerini saklıyoruz
 const y = new Array(1991, 1984, 2008, 2020);
 
-console.log(friends[0]);
-console.log(friends[2]);
+// Diziden elemanlara erişim
+console.log(friends[0]); // İlk eleman: "Michael"
+console.log(friends[2]); // Üçüncü eleman: "Peter"
 
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
+// Dizi uzunluğunu öğrenme
+console.log(friends.length); // 3
+// Dizideki son elemana erişim
+console.log(friends[friends.length - 1]); // "Peter"
 
-friends[2] = "Jay";
-console.log(friends);
-// friends = ["Bob", "Alice"];
+// Dizinin bir elemanını değiştirme
+friends[2] = "Jay"; 
+console.log(friends); // ["Michael", "Steven", "Jay"]
 
+// Tamamen yeni bir dizi atamak istersek hata alırız (const olduğundan)
+// friends = ["Bob", "Alice"]; // ❌
+
+// Yeni bir dizi oluşturalım: String, number ve başka bir dizi içeren bir yapı
 const firstName = "Okyanus";
 const okyanus = [firstName, "Aydogan", 2037 - 1999, "developer", friends];
-console.log(okyanus);
-console.log(okyanus.length);
+console.log(okyanus); 
+// ["Okyanus", "Aydogan", 38, "developer", ["Michael", "Steven", "Jay"]]
 
-// Exercise
+// Yeni dizinin uzunluğunu öğrenelim
+console.log(okyanus.length); // 5
+
+// Exercise bölümü: Fonksiyonla yaş hesaplama
+
+// Bir doğum yılı verildiğinde yaş hesaplayan fonksiyon
 function calcAge(birthYear) {
   return 2037 - birthYear;
 }
 
+// Birkaç doğum yılını bir dizi içinde saklıyoruz
 const years = [1990, 1967, 2002, 2010, 2018];
 
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
-console.log(age1, age2, age3);
+// Tek tek dizideki bazı elemanların yaşını hesaplayalım
+const age1 = calcAge(years[0]); // 2037 - 1990
+const age2 = calcAge(years[1]); // 2037 - 1967
+const age3 = calcAge(years[years.length - 1]); // 2037 - 2018
+console.log(age1, age2, age3); // 47, 70, 19
 
+// Aynı işlemi bir dizi içerisinde daha verimli şekilde yapalım
 const ages = [
   calcAge(years[0]),
   calcAge(years[1]),
   calcAge(years[years.length - 1]),
 ];
-console.log(ages);
+console.log(ages); // [47, 70, 19]
+
+*/
+
+/*
+// Arkadaş listesi oluşturuluyor
+const friends = ["Michael", "Steven", "Peter"];
+
+// Eleman ekleme
+const newLength = friends.push("Jay"); // Listenin sonuna 'Jay' ekleniyor
+console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jay']
+console.log(newLength); // 4 (listenin yeni uzunluğu)
+
+friends.unshift("John"); // Listenin başına 'John' ekleniyor
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jay']
+
+// Eleman silme
+friends.pop(); // Son eleman ('Jay') kaldırılıyor
+const popped = friends.pop(); // Son eleman ('Peter') kaldırılıyor ve popped değişkenine atanıyor
+console.log(popped); // 'Peter'
+console.log(friends); // ['John', 'Michael', 'Steven']
+
+friends.shift(); // İlk eleman ('John') kaldırılıyor
+console.log(friends); // ['Michael', 'Steven']
+
+// Eleman arama
+console.log(friends.indexOf("Steven")); // 1 (Steven'ın index'i)
+console.log(friends.indexOf("Bob")); // -1 (Bob listede yok)
+
+// Listenin içinde eleman olup olmadığını kontrol etme
+friends.push(23); // Listeye 23 sayısı ekleniyor
+console.log(friends.includes("Steven")); // true
+console.log(friends.includes("Bob")); // false
+console.log(friends.includes(23)); // true
+
+// includes ile if kullanımı
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Steven"); // Bu satır çalışacak
+}
+*/
+
+// Bahşiş hesaplama fonksiyonu
+const calcTip = function (bill) {
+  // Fatura 50 ile 300 arasında ise %15, değilse %20 bahşiş hesaplanıyor
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+// Alternatif fonksiyon (kısa yazım arrow function ile)
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// Fatura değerleri listesi
+const bills = [125, 555, 44];
+
+// Her fatura için bahşiş değerleri
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+// Her fatura + bahşiş toplamı
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+// Sonuçları ekrana bastırma
+console.log(bills, tips, totals);
