@@ -311,6 +311,7 @@ const okyanus = {
   friends: ["Michael", "Peter", "Steven"],
 };
 */
+/*
 // Bir nesne (object) oluşturuyoruz
 const okyanus = {
   firstName: "Okyanus",
@@ -365,3 +366,60 @@ console.log(
 console.log(
   `${okyanus["firstName"]} has ${okyanus["friends"].length} friends, and his best friend is called ${okyanus["friends"][0]}`
 );
+*/
+
+/*
+// Okyanus adında bir nesne (object) oluşturuyoruz
+const okyanus = {
+  firstName: "Okyanus",
+  lastName: "Aydogan",
+  birthYear: 1991,
+  job: "developer",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // 1. Versiyon - calcAge fonksiyonu (Parametreli kullanım)
+  calcAgeV1: function (birthYear) {
+    return 2037 - birthYear;
+  },
+
+  // 2. Versiyon - calcAge fonksiyonu (this kullanarak doğrudan obje içinden alma)
+  calcAgeV2: function () {
+    // console.log(this); // this burada 'okyanus' nesnesini temsil eder
+    return 2037 - this.birthYear;
+  },
+
+  // 3. Versiyon - calcAge fonksiyonu (yaşı hesaplayıp nesne içine kaydetme)
+  calcAge: function () {
+    this.age = 2037 - this.birthYear; // nesneye age adında yeni bir özellik ekliyoruz
+    return this.age;
+  },
+
+  // Özet (Summary) oluşturan fonksiyon
+  getSummary: function () {
+    // hasDriversLicense true ise "has", değilse "doesn't have" yazacak
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he ${
+      this.hasDriversLicense ? "has" : "doesn't have"
+    } a driver's license.`;
+  },
+};
+
+// ---- Test kısmı ----
+
+// 1. Versiyonu test ediyoruz
+console.log("1. Versiyon (Parametre ile):", okyanus.calcAgeV1(1991)); // 46
+
+// 2. Versiyonu test ediyoruz
+console.log("2. Versiyon (this ile doğrudan nesneden):", okyanus.calcAgeV2()); // 46
+
+// 3. Versiyonu çalıştırıyoruz (age'i nesneye kaydeder)
+okyanus.calcAge();
+
+// Artık okyanus nesnesinde age özelliği var, onu yazdırıyoruz
+console.log("Yaş bilgisi:", okyanus.age); // 46
+
+// Summary bilgisini alıyoruz
+console.log("Summary bilgisi:", okyanus.getSummary());
+*/
