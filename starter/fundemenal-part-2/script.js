@@ -424,6 +424,7 @@ console.log("Yaş bilgisi:", okyanus.age); // 46
 console.log("Summary bilgisi:", okyanus.getSummary());
 */
 
+/*
 // Challenge #3
 
 const mark = {
@@ -459,3 +460,105 @@ if (mark.bmi > john.bmi) {
     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
   );
 }
+*/
+
+/*
+// for loop keeps running while condiion is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+}
+*/
+
+/*
+// Verilerin olduğu ana array
+const okyanusArray = [
+  "Okyanus",                      // string
+  "Aydogan",                      // string
+  "2037-1999",                    // string
+  "developer",                    // string
+  ["Michael", "Peter", "Seven"],  // object (array)
+  true,                           // boolean
+  1234                            // number -> break çalışsın diye ekledim!
+];
+
+// Boş bir array, burada her bir elemanın tipini saklayacağız
+const types = [];
+
+// Döngü: okyanusArray içindeki her bir elemanı okuyoruz
+for (let i = 0; i < okyanusArray.length; i++) {
+  // Mevcut elemanı ve tipini konsola yazıyoruz
+  console.log(okyanusArray[i], typeof okyanusArray[i]);
+
+  // types array'ine tipi ekliyoruz
+  // 1. Yöntem: index'e göre
+  // types[i] = typeof okyanusArray[i];
+
+  // 2. Yöntem: push ile sona ekleme (bu daha modern tercih)
+  types.push(typeof okyanusArray[i]);
+}
+
+console.log(types);  // Tüm elemanların tiplerini gösterir
+
+// Yıllar dizisi
+const years = [1991, 2007, 1969, 2020];
+// Boş yaşlar dizisi
+const ages = [];
+
+// Yıllardan yaş hesaplama
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);  // 2037 yılına göre yaş hesaplıyoruz
+}
+console.log(ages);  // Hesaplanan yaşlar
+
+// --- continue örneği ---
+// Sadece string olanları yazdıracağız
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < okyanusArray.length; i++) {
+  // Eğer string değilse ➔ bu adımı atla ve devam et
+  if (typeof okyanusArray[i] !== "string") continue;
+
+  // Sadece string olanları konsola yaz
+  console.log(okyanusArray[i], typeof okyanusArray[i]);
+}
+
+// --- break örneği ---
+// Number tipindeki ilk elemana gelene kadar yazdırır, sonra döngüyü kırar
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < okyanusArray.length; i++) {
+  // Eğer tip number ise ➔ döngüyü kır
+  if (typeof okyanusArray[i] === "number") break;
+
+  // Number çıkana kadar elemanları yaz
+  console.log(okyanusArray[i], typeof okyanusArray[i]);
+}
+*/
+
+/*
+// Bir array tanımladık
+const okyanusArray = [
+  "Okyanus",
+  "Aydogan",
+  2037 - 1999, // bu işlem sonucu 38 sayısını döndürür
+  "developer",
+  ["Michael", "Peter", "Seven"], // bu bir array (dizi)
+  true, // boolean değer
+];
+
+// Array'i tersten (sondan başa) okumak için for döngüsü kullanıyoruz
+for (let i = okyanusArray.length - 1; i >= 0; i--) {
+  // Her bir index ve o indexteki elemanı konsola yazdırıyoruz
+  console.log(i, okyanusArray[i]);
+}
+
+// Şimdi nested loop (iç içe döngü) ile egzersiz simülasyonu yapıyoruz
+for (let exercise = 1; exercise < 4; exercise++) {
+  // Her egzersiz başladığında konsola mesaj yazdırıyoruz
+  console.log(`------------Starting exercise ${exercise}`);
+
+  // Her egzersiz için 5 tekrar yapıyoruz
+  for (let rep = 1; rep < 6; rep++) {
+    // Her tekrar sırasında mesaj yazdırıyoruz
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}🏋️‍♂️`);
+  }
+}
+*/
