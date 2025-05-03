@@ -562,3 +562,69 @@ for (let exercise = 1; exercise < 4; exercise++) {
   }
 }
 */
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+// }
+
+/*
+let rep = 1;
+while (rep <= 10) {
+  console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
+*/
+
+/*
+// Challenge #4
+
+// Tip calculation function ➔ returns 15% tip if bill is between 50 and 300, else 20%
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+// Test data (10 bill values)
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// Empty arrays to store calculated tips and total amounts (bill + tip)
+const tips = [];
+const totals = [];
+
+// Loop over bills array to calculate tips and totals
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+
+// Log the bills, tips, and totals arrays
+console.log(bills, tips, totals);
+
+// Function to calculate the average of numbers in an array
+const calcAverage = function (arr) {
+  let sum = 0;
+
+  // Loop through the array and sum all values
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  // Return average (sum divided by number of items)
+  return sum / arr.length;
+};
+
+// Calculate and log the average total amount
+console.log(calcAverage(totals));
+
+// Calculate and log the average tip
+console.log(calcAverage(tips));
+*/
