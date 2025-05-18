@@ -13,5 +13,9 @@ It showcases core concepts like:
 #### 🗂️ Folder Path 
 `starter/04-Guess-My-Number`
 #### 🖼️ Game Preview 
-<img scr="Pictures/guess-my-number-pic/Game_Screen-1.png" width="400" />
-<img scr="Pictures/guess-my-number-pic/Game_Screen-2.png" width="400" />
+<p align="center">
+  <img src="Pictures/guess-my-number-pic/Game_Screen-1.png" width="400" style="display:inline-block; margin-right: 10px;" />
+  <img src="Pictures/guess-my-number-pic/Game_Screen-2.png" width="400" style="display:inline-block;" />
+</p>
+
+
