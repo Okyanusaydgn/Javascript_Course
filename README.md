@@ -18,4 +18,35 @@ It showcases core concepts like:
   <img src="Pictures/guess-my-number-pic/Game_Screen-2.png" width="400" style="display:inline-block;" />
 </p>
 
+---
 
+### 🪟 Project 2: Modal Window
+An interactive modal window built using JavaScript.
+It demonstrates essential front-end concepts such as:
+
+DOM selection and manipulation
+
+Event listeners (click, keyboard)
+
+NodeList iteration with for loop
+
+CSS class toggling
+
+Keyboard event handling (Escape key)
+
+✨ The modal can be opened by clicking one of the "Show Modal" buttons, and closed via:
+
+The ❌ close button
+
+Clicking the dark overlay background
+
+Pressing the Escape key on your keyboard
+
+🗂️ Folder Path
+starter/06-Modal
+
+🖼️ Modal Preview
+<p align="center">
+  <img src="Pictures/modal/modal-1.png" width="400" style="display:inline-block; margin-right: 10px;" />
+  <img src="Pictures/modal/modal-2.png" width="400" style="display:inline-block;" />
+</p>
