@@ -62,6 +62,8 @@ calcAge(1991);
  * name = "Fatma"; // ❌ Hata! const ile tanımlanan sabit değiştirilemez.
  */
 
+/*
+
 // Hoisting And TDZ
 
 // Variables
@@ -106,7 +108,9 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
-
+*/
+//////////
+/*
 // THIS keyword practise
 
 const calcAge = function (birthYear) {
@@ -120,7 +124,9 @@ const calcAgeArrow = birthYear => {
   console.log(this);
 };
 calcAgeArrow(1991);
-
+*/
+/////////////////////
+/*
 const jonas = {
   year: 1991,
   calcAge: function () {
@@ -139,3 +145,52 @@ matilda.calcAge();
 
 //const f = jonas.calcAge;
 //f();
+ */
+////////////////////////////
+// Regular Function && Arrow function
+/*
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+
+    // Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+jonas.greet();
+jonas.calcAge();
+*/
+////////////////////
+/*
+// Arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);  // works fine, outputs Arguments object
+  return a + b;
+};
+addExpr(2, 5);
+
+var addArrow = (a, b) => {
+  console.log(arguments);  // ERROR: arguments is not defined
+  return a + b;
+};
+addArrow(2, 3);
+*/
