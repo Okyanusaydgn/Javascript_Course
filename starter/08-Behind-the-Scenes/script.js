@@ -8,6 +8,7 @@
  * Execution Context için de variable environment(değişken ortamı); değişken,fonksiyonlar
  * Scope Chain: bu context'in erişebileceği dış kapsamlar.
  */
+/*
 function calcAge(birthYear) {
   const age = 2037 - birthYear; // Doğum yılına göre yaş hesaplanıyor
 
@@ -45,7 +46,7 @@ function calcAge(birthYear) {
 
 const firstName = 'Jonas';
 calcAge(1991);
-
+*/
 /*
  * 📌 let vs const Özeti:
  * ---------------------
@@ -105,3 +106,36 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+// THIS keyword practise
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1991);
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+jonas.calcAge(1991);
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+
+//const f = jonas.calcAge;
+//f();
