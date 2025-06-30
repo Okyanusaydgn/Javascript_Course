@@ -223,12 +223,18 @@ const books = [
   },
 ];
 
+//////////////////////////////////////
+
 // Assignment 1.1
 [firstBook, secondBook] = books;
-console.log(firstBook, secondBook);
+// console.log(firstBook, secondBook);
+
+//////////////////////////////////////
 
 // Assignment 1.2
 [, , thirdBook] = books;
+
+//////////////////////////////////////
 
 // Assignment 1.3
 const ratings = [
@@ -237,10 +243,50 @@ const ratings = [
 ];
 
 const [[, rating], [, ratingsCount]] = ratings;
-console.log(rating, ratingsCount);
+// console.log(rating, ratingsCount);
+
+//////////////////////////////////////
 
 // Assignment 1.4
 const ratingStars = [63405, 1808];
 
 [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
-console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
+// console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
+
+//////////////////////////////////////
+
+// Assignment 2.1
+const { title, author, ISBN } = books[0];
+
+//////////////////////////////////////
+
+// Assignment 2.2
+const { keywords: tags } = books[0];
+
+//////////////////////////////////////
+
+// Assignment 2.3
+const { language, programmingLanguage = 'unknown' } = books[6];
+
+//////////////////////////////////////
+
+// Assignment 2.4
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+({ title: bookTitle, author: bookAuthor } = books[0]);
+
+//////////////////////////////////////
+
+// Assignment 2.5
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0];
+
+//////////////////////////////////////
+
+// Assignment 2.6
+function printBookInfo({ title, author, year = 'year unknown' }) {
+  console.log(`${title} by ${author}, ${year}`);
+}
