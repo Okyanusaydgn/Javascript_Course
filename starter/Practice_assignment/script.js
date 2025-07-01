@@ -290,3 +290,11 @@ const {
 function printBookInfo({ title, author, year = 'year unknown' }) {
   console.log(`${title} by ${author}, ${year}`);
 }
+
+// Assignment 3.1
+bookAuthors = { ...books[0].bookAuthor, ...books[1].author };
+
+// Assignment 3.2
+function spellWorld(word) {
+  console.log(...word);
+}
