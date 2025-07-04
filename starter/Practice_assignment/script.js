@@ -377,3 +377,27 @@ for (const [i, el] of allAuthors.entries()) {
 // for (const [index, author] of allAuthors.entries()) {
 //   console.log(`${index + 1}. ${author}`);
 // }
+
+// Assignment 9.1
+
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+const newBook = {};
+for (const [key, value] of bookData) {
+  newBook[key] = value;
+}
+
+// console.log(newBook);
+
+// Assignment 9.1
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages,
+};
