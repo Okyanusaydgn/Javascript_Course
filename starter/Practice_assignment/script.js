@@ -338,3 +338,42 @@ for (let i = 0; i < books.length; i++) {
 for (let i = 0; i < books.length; i++) {
   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
 }
+
+// Assignment 8.1
+let pageSum = 0;
+for (let item of books) {
+  pageSum += item.pages;
+  // console.log(pageSum);
+}
+
+// Assignment 8.2
+let allAuthors = [];
+
+for (const book of books) {
+  if (typeof book.author === 'string') {
+    allAuthors.push(book.author);
+  } else {
+    for (const author of book.author) {
+      allAuthors.push(author);
+    }
+  }
+  console.log(allAuthors);
+}
+
+// 2. solving style
+
+// if (typeof book.author === 'string') {
+//   allAuthors.push(book.author);
+// } else {
+//   allAuthors.push(...book.author);
+// }
+
+// Assignment 8.3
+for (const [i, el] of allAuthors.entries()) {
+  console.log(`${i + 1}. ${el}`);
+}
+
+// Teacher Solving
+// for (const [index, author] of allAuthors.entries()) {
+//   console.log(`${index + 1}. ${author}`);
+// }
