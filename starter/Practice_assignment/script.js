@@ -298,3 +298,43 @@ bookAuthors = { ...books[0].bookAuthor, ...books[1].author };
 function spellWorld(word) {
   console.log(...word);
 }
+
+// Assignment 4.1
+const [mainKeyword, ...rest] = books[0].keywords;
+
+// Assignment 4.2
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+
+// Assignment 4.3
+function printBookAuthorsCount(title, ...authors) {
+  console.log(`The book "${title}" has ${authors.length} authors`);
+}
+
+// Assignment 5.1
+function hasExamplesInJava(book) {
+  return book.programmingLanguage === 'Java' || 'no data available';
+}
+
+// Assignment 5.2
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent &&
+    console.log(`"${books[i].title}" provides online content`);
+}
+
+// Assignment 6.1
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent ??
+    console.log(
+      `"${books[i].title} provides no data about its online content"`
+    );
+}
+
+// Assignment 7.1
+for (let i = 0; i < books.length; i++) {
+  books[i].edition ||= 1;
+}
+
+// Assignment 7.1
+for (let i = 0; i < books.length; i++) {
+  books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+}
