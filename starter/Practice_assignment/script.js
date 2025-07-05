@@ -307,7 +307,7 @@ const { publisher: bookPublisher, ...restOfTheBook } = books[1];
 
 // Assignment 4.3
 function printBookAuthorsCount(title, ...authors) {
-  console.log(`The book "${title}" has ${authors.length} authors`);
+  // console.log(`The book "${title}" has ${authors.length} authors`);
 }
 
 // Assignment 5.1
@@ -316,18 +316,18 @@ function hasExamplesInJava(book) {
 }
 
 // Assignment 5.2
-for (let i = 0; i < books.length; i++) {
-  books[i].onlineContent &&
-    console.log(`"${books[i].title}" provides online content`);
-}
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`"${books[i].title}" provides online content`);
+// }
 
 // Assignment 6.1
-for (let i = 0; i < books.length; i++) {
-  books[i].onlineContent ??
-    console.log(
-      `"${books[i].title} provides no data about its online content"`
-    );
-}
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent ??
+//     console.log(
+//       `"${books[i].title} provides no data about its online content"`
+//     );
+// }
 
 // Assignment 7.1
 for (let i = 0; i < books.length; i++) {
@@ -357,7 +357,7 @@ for (const book of books) {
       allAuthors.push(author);
     }
   }
-  console.log(allAuthors);
+  // console.log(allAuthors);
 }
 
 // 2. solving style
@@ -370,7 +370,7 @@ for (const book of books) {
 
 // Assignment 8.3
 for (const [i, el] of allAuthors.entries()) {
-  console.log(`${i + 1}. ${el}`);
+  // console.log(`${i + 1}. ${el}`);
 }
 
 // Teacher Solving
@@ -401,3 +401,33 @@ const newBook2 = {
   author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
   pages,
 };
+
+// Assignment 10.1
+const getFirstKeyword = function (book) {
+  return book.keywords?.[0];
+};
+
+// Practise 10.2
+// const user = {
+//   name: 'Merve',
+//   contact: {
+//     email: 'merve@example.com',
+//     phone: '0532 123 4567',
+//   },
+// };
+
+// console.log(user.contact.email);
+
+// Practise 10.3
+// const employee = {
+//   name: 'Ali',
+//   department: {
+//     name: 'IT',
+//     head: {
+//       name: 'Mehmet',
+//     },
+//   },
+// };
+
+// console.log(employee.department?.head?.name ?? 'No head assigned');
+// console.log(employee.salary?.amount ?? 'Salary not set');
