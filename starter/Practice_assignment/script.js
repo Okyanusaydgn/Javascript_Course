@@ -431,3 +431,26 @@ const getFirstKeyword = function (book) {
 
 // console.log(employee.department?.head?.name ?? 'No head assigned');
 // console.log(employee.salary?.amount ?? 'Salary not set');
+
+// Assignment 11.1
+
+const entries = [];
+
+for (const key of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([key]);
+}
+// console.log(entries);
+
+// Assignment 11.2
+for (const [index, value] of Object.values(
+  books[0].thirdParty.goodreads
+).entries()) {
+  entries[index].push(value);
+}
+
+// console.log(entries);
+
+// Assignment 11.3
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+console.log(entries);
+console.log(entries2);
