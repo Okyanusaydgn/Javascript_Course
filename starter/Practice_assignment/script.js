@@ -432,6 +432,8 @@ const getFirstKeyword = function (book) {
 // console.log(employee.department?.head?.name ?? 'No head assigned');
 // console.log(employee.salary?.amount ?? 'Salary not set');
 
+/*
+///////////////////////////////////////////
 // Assignment 11.1
 
 const entries = [];
@@ -454,3 +456,46 @@ for (const [index, value] of Object.values(
 const entries2 = Object.entries(books[0].thirdParty.goodreads);
 console.log(entries);
 console.log(entries2);
+*/
+
+// Assignment 12.1
+const allKeywords = [];
+for (const book of books) {
+  allKeywords.push(...book.keywords);
+  // console.log(allKeywords);
+}
+
+// Assignment 12.2
+const uniqueKeywords = new Set(allKeywords);
+
+// const uniqueKeywords = [...new Set(allKeywords)];
+// console.log(uniqueKeywords);
+
+// Assignment 12.3
+uniqueKeywords.add('coding');
+uniqueKeywords.add('science');
+
+// const mySet = new Set(uniqueKeywords); // Turning into set
+
+// Adding 'coding' and 'science'
+// mySet.add('coding');
+// mySet.add('science');
+
+// Turning into array
+// const updatedKeywords = [...mySet];
+// console.log(updatedKeywords);
+
+//////////////////////////////////////////////////////
+// Another solving way
+// const newWords = ['coding', 'science'];
+// const mySet = new Set(uniqueKeywords);
+// const updatedSet = new Set([...mySet, ...newWords]);
+
+// Assignment 12.4
+uniqueKeywords.delete('business');
+
+// Assignment 12.5
+const uniqueKeywordsArr = [...uniqueKeywords];
+
+// Assignment 12.6
+uniqueKeywords.clear();

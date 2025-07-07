@@ -53,9 +53,45 @@ const restaurant = {
   },
 };
 
+/*
+/////////////////////////////////////////////////////////////////////////////
+// Sets
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+console.log(new Set('Jonas'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+console.log(orderSet.add('Garlic Bread'));
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('okyanusaydogan').size);
+*/
+
 ////////////////////////////////////////////////////////////////////////////
 // New operations to Make Sets Useful!
-
+/*
 const italianFoods = new Set([
   'pasta',
   'gnocchi',
@@ -94,45 +130,10 @@ const uniqueItalianAndMexicanFoods =
 console.log(uniqueItalianAndMexicanFoods);
 
 console.log(italianFoods.isDisjointFrom(mexicanFoods));
-
-/*
-/////////////////////////////////////////////////////////////////////////////
-// Sets
-const orderSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
-
-console.log(orderSet);
-console.log(new Set('Jonas'));
-
-console.log(orderSet.size);
-console.log(orderSet.has('Pizza'));
-console.log(orderSet.has('Bread'));
-console.log(orderSet.add('Garlic Bread'));
-orderSet.delete('Risotto');
-// orderSet.clear();
-console.log(orderSet);
-
-for (const order of orderSet) console.log(order);
-
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
-
-console.log(new Set('okyanusaydogan').size);
 */
 
 /*
-////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 // Looping Objects: Object Keys, Values and Entries
 // Property NAMES
 const properties = Object.keys(openingHours);
