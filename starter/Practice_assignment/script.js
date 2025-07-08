@@ -499,3 +499,23 @@ const uniqueKeywordsArr = [...uniqueKeywords];
 
 // Assignment 12.6
 uniqueKeywords.clear();
+
+// Assignment 13.1
+const bookMap = new Map([
+  ['title', 'Clean Code'],
+  ['author', 'Robert C. Martin'],
+]);
+
+// Assignment 13.2
+bookMap.set('pages', 464);
+
+// Assignment 13.3
+console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
+
+// Assignment 13.4
+console.log(bookMap.size);
+
+// Assignment 13.5
+bookMap.has('author') && console.log('The author of the book is known');
+// 2. solving way
+// if (bookMap.has('author')) console.log('The author is known');
