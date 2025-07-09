@@ -519,3 +519,17 @@ console.log(bookMap.size);
 bookMap.has('author') && console.log('The author of the book is known');
 // 2. solving way
 // if (bookMap.has('author')) console.log('The author is known');
+
+// Assignment 14.1
+const firstBookMap = new Map(Object.entries(books[0]));
+
+// Assignment 14.2
+for (const [key, value] of firstBookMap) {
+  if (typeof value === 'number') {
+    console.log(`${key}: ${value}`);
+  }
+}
+
+// for (const [key, value] of firstBookMap) {
+//   if (typeof value === 'number') console.log(key);
+// }
