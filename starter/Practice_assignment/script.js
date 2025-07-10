@@ -533,3 +533,26 @@ for (const [key, value] of firstBookMap) {
 // for (const [key, value] of firstBookMap) {
 //   if (typeof value === 'number') console.log(key);
 // }
+
+// Assignment 15.1
+console.log(
+  books[0].ISBN['6'],
+  books[0].ISBN['4'],
+  books[0].ISBN['9'],
+  books[0].ISBN['8']
+);
+
+// Assignment 15.2
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+
+console.log(quote.indexOf('chess'));
+
+// Assignment 15.3
+console.log(quote.slice(quote.lastIndexOf(' ') + 1));
+
+// Assignment 15.4
+
+function isContributor(author) {
+  return author.lastIndexOf('(Contributor)') !== -1;
+}
