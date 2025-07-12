@@ -513,7 +513,7 @@ bookMap.set('pages', 464);
 console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
 
 // Assignment 13.4
-console.log(bookMap.size);
+// console.log(bookMap.size);
 
 // Assignment 13.5
 bookMap.has('author') && console.log('The author of the book is known');
@@ -526,7 +526,7 @@ const firstBookMap = new Map(Object.entries(books[0]));
 // Assignment 14.2
 for (const [key, value] of firstBookMap) {
   if (typeof value === 'number') {
-    console.log(`${key}: ${value}`);
+    // console.log(`${key}: ${value}`);
   }
 }
 
@@ -546,13 +546,206 @@ console.log(
 const quote =
   'A computer once beat me at chess, but it was no match for me at kick boxing';
 
-console.log(quote.indexOf('chess'));
+// console.log(quote.indexOf('chess'));
 
 // Assignment 15.3
-console.log(quote.slice(quote.lastIndexOf(' ') + 1));
+// console.log(quote.slice(quote.lastIndexOf(' ') + 1));
 
 // Assignment 15.4
 
 function isContributor(author) {
   return author.lastIndexOf('(Contributor)') !== -1;
 }
+
+// Practise
+// Practise 1
+/*
+const fruits = ['🍎 Apple', '🍌 Banana', '🍇 Grape', '🍓 Strawberry'];
+const [firstFruit, secondFruit, thirdFruit] = fruits;
+console.log(firstFruit);
+*/
+//////////////////////////////////////////////////////////////////////////////
+/*
+// Practise 2
+const students = ['Ali', 'Ayşe', 'Mehmet'];
+const [firstStudent, , thirdStudent, fourthStudent = 'Boş'] = students;
+console.log(firstStudent);    
+console.log(thirdStudent);   
+console.log(fourthStudent);
+*/
+/*
+//////////////////////////////////////////////////////////////////////////////
+// Practise 3 
+
+const user = {
+  name: 'Zeynep',
+  age: 27,
+  email: 'zeynep@example.com',
+  city: 'Istanbul',
+};
+
+const {name, age, email} = user;
+console.log(name);   // Zeynep
+console.log(age);    // 27
+console.log(email);  // zeynep@example.com
+*/
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 4
+
+const settings = {
+  theme: 'dark',
+  fontSize: 16,
+};
+
+const { theme: currentTheme, fontSize, language2 = 'tr' } = settings;
+
+// console.log(currentTheme);
+// console.log(fontSize);
+// console.log(language2);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 5
+
+const europeanCountries = ['Germany', 'France', 'Spain'];
+const asianCountries = ['Japan', 'China', 'India'];
+
+copyEurope = [...europeanCountries];
+worldCountries = [...copyEurope, ...asianCountries];
+// console.log(worldCountries);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 6
+const person = {
+  name: 'Elif',
+  age: 25,
+  city: 'Istanbul',
+};
+
+updatedPerson = { ...person, age: 30, city: 'Ankara' };
+// console.log(updatedPerson);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 7
+const sumAll = function (...numbers) {
+  total = 0;
+  for (const num of numbers) {
+    total += num;
+  }
+  console.log(total);
+};
+
+sumAll(4, 5, 6);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 8
+const numbers = [10, 20, 30, 40, 50];
+const [first, second, ...others] = numbers;
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 9
+const carBrands = ['Toyota', 'BMW', 'Audi', 'Mercedes'];
+const [firstCar, secondCar, ...others2] = carBrands;
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 10
+const user = {
+  username: 'coder123',
+  email: 'coder@example.com',
+  password: '123456',
+};
+
+const { username, email } = user;
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 11
+const veggies = ['Carrot', 'Broccoli'];
+const fruits = ['Apple', 'Banana'];
+
+const allItems = [...veggies, ...fruits];
+console.log(allItems);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 12
+const employee = {
+  name: 'John',
+  age: 35,
+  department: 'Sales',
+};
+
+const employee2 = { ...employee, age: 40 };
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 13
+const isAdmin = true;
+const accessLevel = 'full-access';
+
+console.log(isAdmin && accessLevel);
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 13
+const userInput = null;
+console.log(userInput ?? 'z');
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 14
+const a = 0;
+const b = '';
+const c = undefined;
+const d = null;
+
+console.log(a ?? 'default'); // 0 --> because 0 isn't a null
+console.log(b ?? 'default'); // ---> beacuse empty string isn't a null
+console.log(c ?? 'default'); // --> default
+console.log(d ?? 'default'); // --> default
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 15
+const settings2 = {
+  theme: 'dark',
+  fontSize: 0,
+  language: undefined,
+};
+
+console.log((settings2.theme ||= 'light'));
+console.log((settings2.fontSize ??= 16));
+console.log((settings2.language ??= 'en'));
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 16
+const languages = ['JavaScript', 'Python', 'Java', 'C++'];
+
+for (const x of languages) {
+  console.log(`Öğrenilen dil: ${x}`);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 17
+const product = 'Laptop';
+const price = 15000;
+const currency = '₺';
+
+const item = {
+  product,
+  price,
+  currency,
+  getSummary() {
+    return `${this.product} ürünün fiyatı: ${this.price}${this.currency}`;
+  },
+};
+
+console.log(item.getSummary());
+//////////////////////////////////////////////////////////////////////////////
+// Practise 18
+const user1 = {
+  name: 'Emre',
+  address: {
+    street: 'Atatürk Cd.',
+    city: 'İstanbul',
+  },
+};
+
+console.log(user1.address?.zipcode ?? 'Zipcode yok');
+
+//////////////////////////////////////////////////////////////////////////////
+// Practise 19

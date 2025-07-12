@@ -52,7 +52,7 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-
+/*
 //////////////////////////////////
 // Working With Strings - Part 3
 
@@ -104,6 +104,7 @@ const planesInline = function (n) {
 planesInline(5);
 planesInline(3);
 planesInline(12);
+*/
 
 /*
 //////////////////////////////////
