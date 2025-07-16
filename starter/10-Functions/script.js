@@ -28,6 +28,9 @@ createBooking('LH123', 5);
 createBooking('LG212', undefined, 1000);
 */
 
+/////////////////////////////////////
+// PASSING ARGUMENTS WORKS: VALUE - REFERENCE
+/*
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedtmann',
@@ -59,3 +62,51 @@ const newPassport = function (person) {
 
 newPassport(jonas);
 checkIn(flight, jonas);
+*/
+
+/////////////////////////////////////
+// Call Back Functions
+/*
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// High-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('Javascript is the best', upperFirstWord);
+transformer('Javascript is the best', oneWord);
+
+// JS uses call back all the time.
+const high5 = function () {
+  console.log('✋');
+};
+document.body.addEventListener('click', high5);
+['Jonas', 'Martha', 'Adam'].forEach(high5);
+*/
+
+/*
+function islemYap(a, b, callback) {
+  const sonuc = callback(a, b);
+  console.log(`Sonuç: ${sonuc}`);
+}
+
+function topla(x, y) {
+  return x + y;
+}
+
+function carp(x, y) {
+  return x * y;
+}
+islemYap(3, 4, topla);
+*/
