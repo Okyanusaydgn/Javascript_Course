@@ -804,3 +804,335 @@ console.log(groupedByActivity);
 const groupedAccounts = Object.groupBy(accounts, ({ type }) => type);
 console.log(groupedAccounts);
 */
+
+/*
+/////////////////////////////////////////////////////////
+// Creating & Filling Arrays
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty arrays + fill method
+const x = new Array(7);
+console.log(x);
+
+// console.log(x.map(() => 5));
+// x.fill(1);
+x.fill(1, 3, 5);
+x.fill(1);
+console.log(x);
+
+arr.fill(23, 4, 6);
+console.log(arr);
+
+// Array.from
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+// const diceRandom = Array.from(
+//   { length: 100 },
+//   () => Math.floor(Math.random() * 6) + 1
+// );
+// console.log(diceRandom);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+
+  console.log(movementsUI);
+});
+
+// labelBalance.addEventListener('click', function () {
+//   const movementsUI = [...document.querySelectorAll('.movements__value')].map(el =>
+//     Number(el.textContent.replace('€', ''))
+//   );
+
+//   console.log(movementsUI);
+// });
+*/
+
+/*
+///////////////////////////////////////////////////////////
+// Non- Destructive alternatives: toReversed, toSorted, toSpliced, with
+console.log(movements);
+const reversedMov = movements.reverse();
+console.log(reversedMov);
+
+// toSorted (sort), toSpliced (splice)
+
+// movements[1] = 2000;
+
+const newMovements = movements.with(1, 2000);
+console.log(newMovements);
+
+console.log(movements);
+*/
+
+/*
+////////////////////////
+// PRACTISING
+
+const arr = [1, 2, 3];
+console.log('Başlangıç:', arr);
+
+// push() - sona ekle
+arr.push(4);
+console.log('push(4):', arr); // [1, 2, 3, 4]
+
+// unshift() - başa ekle
+arr.unshift(0);
+console.log('unshift(0):', arr); // [0, 1, 2, 3, 4]
+
+// pop() - sondan sil
+arr.pop();
+console.log('pop():', arr); // [0, 1, 2, 3]
+
+// shift() - baştan sil
+arr.shift();
+console.log('shift():', arr); // [1, 2, 3]
+
+// splice(index, silinecek, eklenecekler)
+arr.splice(1, 1, 99); // 1. indexteki elemanı sil, yerine 99 koy
+console.log('splice(1,1,99):', arr); // [1, 99, 3]
+
+// .reverse(): diziyi ters çevirir (orijinali değiştirir)
+const arr1 = [1, 2, 3, 4, 5];
+arr1.reverse();
+console.log('reverse():', arr1); // [5, 4, 3, 2, 1]
+
+// .sort(): diziyi sıralar (varsayılan olarak string gibi sıralar)
+const names = ['Zeynep', 'Ali', 'Fatma'];
+names.sort();
+console.log('sort():', names); // ['Ali', 'Fatma', 'Zeynep']
+
+// Sayılarda dikkat!
+const nums = [10, 5, 20, 1];
+nums.sort();
+console.log('Yanlış sort():', nums); // [1, 10, 20, 5] -> string gibi sıraladı
+
+// Sayıları doğru sıralamak için karşılaştırıcı fonksiyon verilir:
+nums.sort((a, b) => a - b);
+console.log('Doğru sort():', nums); // [1, 5, 10, 20]
+
+// .fill(): tüm diziyi aynı değerle doldurur
+const filled = new Array(5).fill('🔥');
+console.log('fill():', filled); // ['🔥', '🔥', '🔥', '🔥', '🔥']
+
+// fill() ile kısmî doldurma
+const arr2 = [1, 2, 3, 4, 5];
+arr2.fill(0, 1, 4); // 1. indexten 4. indexe kadar 0 yaz
+console.log('fill(0,1,4):', arr2); // [1, 0, 0, 0, 5]
+
+const numbers = [1, 2, 3, 4, 5];
+
+// .map(): her elemanı işleyip yeni dizi oluşturur
+const doubled = numbers.map(n => n * 2);
+console.log('map (doubled):', doubled); // [2, 4, 6, 8, 10]
+console.log('original:', numbers); // [1, 2, 3, 4, 5]
+
+// .filter(): şarta uyanları alır
+const evens = numbers.filter(n => n % 2 === 0);
+console.log('filter (evens):', evens); // [2, 4]
+
+// .slice(start, end): dizinin bir kısmını alır
+const sliced = numbers.slice(1, 4); // 1. index dahil, 4 hariç
+console.log('slice(1,4):', sliced); // [2, 3, 4]
+
+// .toReversed(): diziyi ters çevirir ama orijinali değiştirmez
+const reversed = numbers.toReversed();
+console.log('toReversed():', reversed); // [5, 4, 3, 2, 1]
+console.log('original:', numbers); // [1, 2, 3, 4, 5]
+
+const original = [3, 1, 4, 2];
+
+// .toSorted(): sıralı yeni dizi döner, orijinali etkilemez
+const sorted = original.toSorted((a, b) => a - b);
+console.log('toSorted():', sorted); // [1, 2, 3, 4]
+console.log('original:', original); // [3, 1, 4, 2]
+
+// .toSpliced(): splice gibi çalışır ama orijinali bozmaz
+// 1. indexten 2 eleman sil, yerine 99 ekle
+const spliced = original.toSpliced(1, 2, 99);
+console.log('toSpliced(1,2,99):', spliced); // [3, 99, 2]
+console.log('original:', original); // [3, 1, 4, 2]
+
+// .with(index, value): belirtilen index’teki elemanı değiştirir
+const withChanged = original.with(2, 100);
+console.log('with(2,100):', withChanged); // [3, 1, 100, 2]
+console.log('original:', original); // [3, 1, 4, 2]
+
+// .concat(): iki diziyi birleştirir, orijinali değiştirmez
+const more = [5, 6];
+const combined = original.concat(more);
+console.log('concat:', combined); // [3, 1, 4, 2, 5, 6]
+console.log('original:', original); // [3, 1, 4, 2]
+
+// .flat(): iç içe dizileri tek seviyeye indirir
+const nested = [1, [2, 3], [4, [5, 6]]];
+
+const flat1 = nested.flat(); // sadece 1 seviye düzleştirir
+console.log('flat():', flat1); // [1, 2, 3, 4, [5, 6]]
+
+// Daha derin düzleştirmek için derinlik parametresi verilir
+const flat2 = nested.flat(2);
+console.log('flat(2):', flat2); // [1, 2, 3, 4, 5, 6]
+
+// .flatMap(): hem map yapar, hem düzleştirir (1 seviye)
+const words = ['hello', 'world'];
+const mapped = words.map(word => word.split(''));
+console.log('map + split:', mapped); // [['h','e','l','l','o'], ['w','o','r','l','d']]
+
+const flatMapped = words.flatMap(word => word.split(''));
+console.log('flatMap:', flatMapped); // ['h','e','l','l','o','w','o','r','l','d']
+
+const nums = [10, 20, 30, 40, 30];
+
+// .indexOf(): değerin kaçıncı indexte olduğunu döner (eşleşen ilkini)
+console.log('indexOf(30):', nums.indexOf(30)); // 2
+
+// .findIndex(): şarta uyan ilk elemanın indexini verir
+const greaterThan25 = nums.findIndex(n => n > 25);
+console.log('findIndex(n > 25):', greaterThan25); // 2
+
+// .findLastIndex(): şarta uyan SON elemanın indexini verir
+const lastGreaterThan25 = nums.findLastIndex(n => n > 25);
+console.log('findLastIndex(n > 25):', lastGreaterThan25); // 4
+
+// .find(): şarta uyan ilk elemanın değerini verir
+const found = nums.find(n => n > 25);
+console.log('find(n > 25):', found); // 30
+
+// .findLast(): şarta uyan son elemanın değerini verir
+const lastFound = nums.findLast(n => n > 25);
+console.log('findLast(n > 25):', lastFound); // 30 (son 30)
+
+// .at(): index numarasına göre eleman döner (negatif varsa sondan sayar)
+console.log('at(1):', nums.at(1));    // 20
+console.log('at(-1):', nums.at(-1));  // 30 (son eleman)
+*/
+
+////////////////////////////////////////////
+// Array Methods Practise
+
+// 1.
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositSum);
+
+// 2.
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov >= 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+console.log(numDeposits1000);
+
+// Prefixed ++ operator
+let a = 10;
+console.log(++a);
+console.log(a);
+
+// 3.
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(sums);
+
+// const { deposits, withdrawals } = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+//       return sums;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
+
+// console.log(deposits, withdrawals);
+
+// 4.
+// this is a nice title -> This Is a Nice Title
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  // const titleCase = title
+  //   .toLowerCase()
+  //   .split(' ')
+  //   .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+  //   .join(' ');
+  // return capitalize(titleCase);
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map((word, i) =>
+      i === 0 || !exceptions.includes(word)
+        ? word[0].toUpperCase() + word.slice(1)
+        : word
+    )
+    .join(' ');
+  return titleCase;
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+
+///////////////////////////////////////
+// Coding Challenge #5
+
+/* 
+Julia and Kate are still studying dogs. This time they are want to figure out if the dogs in their are eating too much or too little food.
+
+- Formula for calculating recommended food portion: recommendedFood = weight ** 0.75 * 28. (The result is in grams of food, and the weight needs to be in kg)
+- Eating too much means the dog's current food portion is larger than the recommended portion, and eating too little is the opposite.
+- Eating an okay amount means the dog's current food portion is within a range 10% above and below the recommended portion (see hint).
+
+YOUR TASKS:
+1. Loop over the array containing dog objects, and for each dog, calculate the recommended food portion (recFood) and add it to the object as a new property. Do NOT create a new array, simply loop over the array (We never did this before, so think about how you can do this without creating a new array).
+2. Find Sarah's dog and log to the console whether it's eating too much or too little. HINT: Some dogs have multiple users, so you first need to find Sarah in the owners array, and so this one is a bit tricky (on purpose) 🤓
+3. Create an array containing all owners of dogs who eat too much (ownersTooMuch) and an array with all owners of dogs who eat too little (ownersTooLittle).
+4. Log a string to the console for each array created in 3., like this: "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+5. Log to the console whether there is ANY dog eating EXACTLY the amount of food that is recommended (just true or false)
+6. Log to the console whether ALL of the dogs are eating an OKAY amount of food (just true or false)
+7. Create an array containing the dogs that are eating an OKAY amount of food (try to reuse the condition used in 6.)
+8. Group the dogs into the following 3 groups: 'exact', 'too-much' and 'too-little', based on whether they are eating too much, too little or the exact amount of food, based on the recommended food portion.
+9. Group the dogs by the number of owners they have
+10. Sort the dogs array by recommended food portion in an ascending order. Make sure to NOT mutate the original array!
+
+HINT 1: Use many different tools to solve these challenges, you can use the summary lecture to choose between them 😉
+HINT 2: Being within a range 10% above and below the recommended portion means: current > (recommended * 0.90) && current < (recommended * 1.10). Basically, the current portion should be between 90% and 110% of the recommended portion.
+
+TEST DATA:
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
+  { weight: 18, curFood: 244, owners: ['Joe'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+GOOD LUCK 😀
+*/
