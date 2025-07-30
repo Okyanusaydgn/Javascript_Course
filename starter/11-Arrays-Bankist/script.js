@@ -1016,6 +1016,7 @@ console.log('at(1):', nums.at(1));    // 20
 console.log('at(-1):', nums.at(-1));  // 30 (son eleman)
 */
 
+/*
 ////////////////////////////////////////////
 // Array Methods Practise
 
@@ -1099,7 +1100,7 @@ const convertTitleCase = function (title) {
 console.log(convertTitleCase('this is a nice title'));
 console.log(convertTitleCase('this is a LONG title but not too long'));
 console.log(convertTitleCase('and here is another title with an EXAMPLE'));
-
+*/
 ///////////////////////////////////////
 // Coding Challenge #5
 
@@ -1136,3 +1137,145 @@ const dogs = [
 
 GOOD LUCK 😀
 */
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
+  { weight: 18, curFood: 244, owners: ['Joe'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// MY SOLVING
+
+// 1
+
+dogs.forEach(dog => {
+  dog.recFood = Math.floor(dog.weight ** 0.75 * 28);
+});
+console.log(dogs);
+
+// dogs.forEach(dog => {
+//   console.log(
+//     `${dog.owners.join(' & ')}'s dog should eat ${dog.recFood.toFixed(0)}g`
+//   );
+// });
+
+// 2
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(
+  `Sarah's dogs eats too ${
+    dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'
+  }`
+);
+
+// 3
+const ownersTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recFood)
+  .flatMap(dog => dog.owners);
+
+const ownersTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recFood)
+  .flatMap(dog => dog.owners);
+
+// 4
+console.log(`${ownersTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersTooLittle.join(' and ')}'s dogs eat too little`);
+
+//Matilda and Alice and Bob's dogs eat too much
+
+// function formatOwners(owners) {
+//   if (owners.length === 1) return owners[0];
+//   if (owners.length === 2) return owners.join(' and ');
+//   const others = owners.slice(0, -1).join(', ');
+//   const lastOwner = owners[owners.length - 1];
+//   return others + ' and ' + lastOwner;
+// }
+
+// console.log(formatOwners(ownersTooMuch));
+
+// 5
+console.log(dogs.some(dog => dog.curFood === dog.recFood));
+
+// 6
+
+const checkEatingOkay = dog =>
+  dog.curFood < dog.recFood * 1.1 && dog.curFood > dog.recFood * 0.9;
+
+console.log(dogs.every(checkEatingOkay));
+
+// 7
+const dogsEatingOkay = dogs.filter(checkEatingOkay);
+console.log(dogsEatingOkay);
+
+// 8
+
+const groupedByDog = Object.groupBy(dogs, dog => {
+  if (dog.curFood > dog.recFood * 1.1) return 'too much';
+  else if (dog.curFood < dog.recFood * 0.9) return 'too little';
+  else {
+    return 'exact';
+  }
+});
+
+// const groupedDogs = dogs.reduce(
+//   (acc, dog) => {
+//     if (dog.curFood > dog.recFood * 1.1) {
+//       acc['too much'].push(dog);
+//     } else if (dog.curFood < dog.recFood * 0.9) {
+//       acc['too little'].push(dog);
+//     } else {
+//       acc['exact'].push(dog);
+//     }
+//     return acc;
+//   },
+//   {
+//     'too much': [],
+//     'too little': [],
+//     exact: [],
+//   }
+// );
+
+// console.log(groupedDogs);
+
+// const sums = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+//       sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+//       return sums;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
+
+// 9
+
+const dogsGroupedByOwners = Object.groupBy(dogs, dog => dog.owners.length);
+
+console.log(dogsGroupedByOwners);
+
+// const groupedByOwnerCount = dogs.reduce((acc, dog) => {
+//   const ownerCount = dog.owners.length;
+//   if (!acc[ownerCount]) {
+//     acc[ownerCount] = [];
+//   }
+//   acc[ownerCount].push(dog);
+//   return acc;
+// }, {});
+
+// console.log(groupedByOwnerCount);
+
+// 10
+
+const dogsSorted = dogs.toSorted((a, b) => a.recFood - b.recFood);
+console.log(dogsSorted);
+// const dogsWithRecommended = dogs.map(dog => ({
+//   ...dog,
+//   recommendedFood: Math.trunc(dog.weight ** 0.75 * 28),
+// }));
+
+// const sortedDogs = dogsWithRecommended
+//   .slice()
+//   .sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+// console.log(sortedDogs);
