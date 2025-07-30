@@ -1145,6 +1145,7 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
 
+/*
 // MY SOLVING
 
 // 1
@@ -1279,3 +1280,4 @@ console.log(dogsSorted);
 //   .sort((a, b) => a.recommendedFood - b.recommendedFood);
 
 // console.log(sortedDogs);
+*/
