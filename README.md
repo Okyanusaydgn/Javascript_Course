@@ -53,7 +53,7 @@ starter/06-Modal
 
 ---
 
-🏦 Project: Bankist App
+### 🏦 Project: Bankist App
 
 A simple and interactive banking application built with JavaScript, HTML, and CSS. It demonstrates key front-end concepts such as:
 
@@ -82,4 +82,9 @@ Close account functionality
 Automatic logout after a certain period of inactivity
 
 🖼️ App Preview:
+<p align="center">
+  <img src="Pictures/Bankist-modal1/Bankist-1.png" width="440" height="350" style="object-fit: cover; margin-right: 10px;" />
+  <img src="Pictures/Bankist-modal1/Bankist-2.png" width="400" height="250" style="object-fit: cover;" />
+</p>
+
 
