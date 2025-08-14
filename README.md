@@ -50,3 +50,36 @@ starter/06-Modal
   <img src="Pictures/modal/modal-1.png" width="400" style="display:inline-block; margin-right: 10px;" />
   <img src="Pictures/modal/modal-2.png" width="400" style="display:inline-block;" />
 </p>
+
+---
+
+🏦 Project: Bankist App
+
+A simple and interactive banking application built with JavaScript, HTML, and CSS. It demonstrates key front-end concepts such as:
+
+DOM selection and manipulation
+
+Event listeners (click, form submit)
+
+Array methods (map, filter, reduce)
+
+Timer and automatic logout functionality
+
+Currency and date formatting using Intl API
+
+✨ Features include:
+
+Login/logout system with PIN verification
+
+Display of account balance and transaction history
+
+Transfer money to other accounts
+
+Request loans with automatic approval logic
+
+Close account functionality
+
+Automatic logout after a certain period of inactivity
+
+🖼️ App Preview:
+
