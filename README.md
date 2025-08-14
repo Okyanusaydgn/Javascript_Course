@@ -83,8 +83,8 @@ Automatic logout after a certain period of inactivity
 
 🖼️ App Preview:
 <p align="center">
-  <img src="Pictures/Bankist-modal1/Bankist-1.png" width="440"  style="object-fit: cover; margin-right: 10px;" />
-  <img src="Pictures/Bankist-modal1/Bankist-2.png" width="400"  style="object-fit: cover;" />
+  <img src="Pictures/Bankist-modal1/Bankist-1.png" width="400" height="250" style="object-fit: cover; margin-right: 10px;" />
+  <img src="Pictures/Bankist-modal1/Bankist-2.png" width="400" height="250" style="object-fit: cover;" />
 </p>
 
 
