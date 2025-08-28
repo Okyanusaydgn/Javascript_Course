@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 const Person = function (firstName, birthYear) {
   // Instance properties
   this.firstName = firstName;
@@ -24,7 +24,12 @@ const jack = new Person('Jack', 1975);
 console.log(matilda, jack);
 
 console.log(jonas instanceof Person);
-*/
+
+Person.hey = function () {
+  console.log('Hey there');
+};
+Person.hey();
+// jonas.hey();
 
 /*
 // Prototypes
@@ -116,31 +121,53 @@ mercedes.accelerate();
 mercedes.brake();
 */
 
-/*
 // class expression
 // const PersonCl = class {};
 
 // class declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
+  // Instance method
   // Methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
   }
 
   greet() {
-    console.log(`Hey ${this.firstName}`);
+    console.log(`Hey ${this._fullName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  //  Set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  // Static method
+  static hey() {
+    console.log('Hey there 👌');
+    console.log(this);
   }
 }
 
-const jessica = new PersonCl('Jessica', 1996);
-console.log(jessica);
-jessica.calcAge();
+const jessica = new PersonCl('Jessica Davis', 1996);
 
+console.log(jessica);
+PersonCl.hey();
+jessica.calcAge();
+console.log(jessica.age);
 console.log(jessica.__proto__ === PersonCl.prototype);
 
 // PersonCl.prototype.greet = function() {
@@ -151,4 +178,70 @@ jessica.greet();
 // 1. Classes are NOT hoisted.
 // 2. Classes are first-class citizes
 // 3. Classes are executed in strict mode
+
+const walter = new PersonCl('Walter White', 1965);
+
+PersonCl.hey();
+
+const account = {
+  owner: 'Jonas',
+  movements: [200, 530, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
+
+//////////////////////////////////////////////////
+////// Practise
+/*
+class Dog {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  bark() {
+    console.log(`${this.name} is barking 🐶`);
+  }
+
+  get humanAge() {
+    return this.age * 7;
+  }
+
+  set rename(newName) {
+    this.name = newName;
+  }
+
+  static info() {
+    console.log('Dogs are loyal animals 🐕');
+  }
+}
+
+const myDog = new Dog('Max', 3);
+
+console.log(myDog.name);
+console.log(myDog.age);
+
+myDog.bark();
+
+console.log(myDog.humanAge);
+
+console.log(myDog);
+
+myDog.rename = 'Buddy';
+console.log(myDog.name);
+
+myDog.bark();
+
+Dog.info();
 */
