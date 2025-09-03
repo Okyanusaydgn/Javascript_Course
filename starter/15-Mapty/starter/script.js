@@ -96,6 +96,52 @@ class App {
       ?.addEventListener('click', this._onToolbar.bind(this));
     this._setFormFieldsForType(inputType.value);
     this._updateToolbarVisibility();
+    this._ensureToastRoot();
+  }
+
+  _ensureToastRoot() {
+    if (!document.querySelector('.toasts')) {
+      const root = document.createElement('div');
+      root.className = 'toasts';
+      root.setAttribute('aria-live', 'polite');
+      root.setAttribute('aria-atomic', true);
+      document.body.appendChild(root);
+    }
+  }
+
+  _showToast(message, type = 'info', timeout) {
+    const root = document.querySelector('.toasts');
+    if (!root) return;
+
+    const autoTimeout =
+      timeout ?? (type === 'success' ? 4000 : type === 'error' ? 5000 : 2500);
+
+    const el = document.createElement('div');
+    el.className = `toast toast--${type}`;
+    el.role = type === 'error' ? 'alert' : 'status';
+
+    el.innerHTML = `
+    <span class="toast__message">${message}</span>
+    <button class="toast__close" aria-label="Close">&times;</button>
+    <span class="toast__progress"></span>
+  `;
+
+    el.style.setProperty('--toast-duration', `${autoTimeout}ms`);
+
+    root.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('toast--in'));
+
+    const close = () => {
+      el.classList.remove('toast--in');
+      el.addEventListener('transitionend', () => el.remove(), { once: true });
+    };
+
+    const timer = setTimeout(close, autoTimeout);
+
+    el.querySelector('.toast__close').addEventListener('click', () => {
+      clearTimeout(timer);
+      close();
+    });
   }
 
   _updateToolbarVisibility() {
@@ -134,15 +180,13 @@ class App {
     // Persist
     this._setLocalStorage();
     this._updateToolbarVisibility();
+    this._showToast('All workouts deleted 🧹', 'success');
   }
 
   _getPosition() {
     if (navigator.geolocation)
-      navigator.geolocation.getCurrentPosition(
-        this._loadMap.bind(this),
-        function () {
-          alert('Could not get your position');
-        }
+      navigator.geolocation.getCurrentPosition(this._loadMap.bind(this), () =>
+        this._showToast('Could not get your position', 'error')
       );
   }
 
@@ -221,7 +265,10 @@ class App {
           !validInputs(distance, duration, cadence) ||
           !allPositive(distance, duration, cadence)
         )
-          return alert('Inputs have to be positive numbers!');
+          return this._showToast(
+            'Inputs have to be positive numbers!',
+            'error'
+          );
 
         // Konumu koruyoruz (edit’te yeri aynı kalsın)
         updated = new Running(old.coords, distance, duration, cadence);
@@ -233,7 +280,10 @@ class App {
           !validInputs(distance, duration, elevation) ||
           !allPositive(distance, duration)
         )
-          return alert('Inputs have to be positive numbers!');
+          return this._showToast(
+            'Inputs have to be positive numbers!',
+            'error'
+          );
 
         updated = new Cycling(old.coords, distance, duration, elevation);
       }
@@ -261,6 +311,9 @@ class App {
 
       // PERSIST
       this._setLocalStorage();
+
+      this._showToast('Workout updated ✨', 'success');
+
       return; // edit tamam
     }
 
@@ -274,7 +327,7 @@ class App {
         !validInputs(distance, duration, cadence) ||
         !allPositive(distance, duration, cadence)
       )
-        return alert('Inputs have to be positive numbers!');
+        return this._showToast('Inputs have to be positive numbers!', 'error');
 
       workout = new Running([lat, lng], distance, duration, cadence);
     }
@@ -285,7 +338,7 @@ class App {
         !validInputs(distance, duration, elevation) ||
         !allPositive(distance, duration)
       )
-        return alert('Inputs have to be positive numbers!');
+        return this._showToast('Inputs have to be positive numbers!', 'error');
 
       workout = new Cycling([lat, lng], distance, duration, elevation);
     }
@@ -304,6 +357,8 @@ class App {
 
     // Set local storage to all workouts
     this._setLocalStorage();
+
+    this._showToast('Workout added ✅', 'success');
 
     // Hide delete button
     this._updateToolbarVisibility();
@@ -488,6 +543,7 @@ class App {
     this.#workouts.splice(idx, 1);
     this._setLocalStorage();
     this._updateToolbarVisibility();
+    this._showToast('Workout deleted 🗑️', 'success');
   }
 }
 
