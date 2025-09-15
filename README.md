@@ -44,9 +44,6 @@ It demonstrates essential front-end concepts such as:
 #### 🗂️ Folder Path
 `starter/06-Modal`
 
-🌐 **Live Demo**  
-[Demo Link](YOUR-LINK-HERE)
-
 #### 🖼️ Modal Preview
 <p align="center">
   <img src="Pictures/modal/modal-1.png" width="400" style="display:inline-block; margin-right: 10px;" />
@@ -76,7 +73,12 @@ It demonstrates key front-end concepts such as:
 `starter/Bankist`
 
 🌐 **Live Demo**  
-[Demo Link](YOUR-LINK-HERE)
+[Demo Link](https://ubiquitous-hotteok-371dbd.netlify.app)
+
+🔑 **Test Credentials**  
+Use any of the following demo accounts to log in:
+- **User:** `jd` **PIN:** `2222` (Jessica Davis)  
+- **User:** `ss` **PIN:** `4444` (Sarah Smith)
 
 #### 🖼️ App Preview
 <p align="center">
@@ -107,7 +109,7 @@ Key concepts demonstrated:
 `starter/Mapty/starter`
 
 🌐 **Live Demo**  
-[Demo Link](YOUR-LINK-HERE)
+[Demo Link](https://jazzy-bombolone-8ef0a9.netlify.app)
 
 #### 🖼 **App Preview**
 <p align="center">
@@ -138,7 +140,7 @@ The first to reach the target score (default 100) wins the game.
 `starter/Pig-Game`
 
 🌐 **Live Demo**  
-[Demo Link](YOUR-LINK-HERE)
+[Demo Link](https://charming-cendol-c0e56a.netlify.app)
 
 #### 🖼 **Game Preview**
 <p align="center">
