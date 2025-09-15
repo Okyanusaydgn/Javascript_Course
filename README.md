@@ -83,8 +83,65 @@ Automatic logout after a certain period of inactivity
 
 🖼️ App Preview:
 <p align="center">
-  <img src="Pictures/Bankist-modal1/Bankist-1.png" width="420" height="290" style="object-fit: cover; margin-right: 10px;" />
-  <img src="Pictures/Bankist-modal1/Bankist-2.png" width="400" height="250" style="object-fit: cover;" />
+  <img src="Pictures/bankist-modal/bankist-1.png" width="410" height="290" style="object-fit: cover; margin-right: 10px;" />
+  <img src="Pictures/bankist-modal/bankist-2.png" width="420" height="290" style="object-fit: cover;" />
 </p>
 
+---
+
+## 🗺️ Project: Mapty App
+
+A workout-tracking web application built with **JavaScript**, **HTML**, **CSS**, and the **Leaflet.js** library.  
+It lets users log **running** and **cycling** workouts by clicking on a map and entering workout details.  
+Key concepts demonstrated:
+
+- Geolocation API & Leaflet map integration
+- DOM selection and dynamic rendering
+- Local Storage for persistent data
+- Object-oriented JavaScript (classes, inheritance)
+- Event handling and form validation
+
+✨ **Features**  
+- Add running or cycling workouts by clicking any location on the map  
+- Auto-detect user position and center the map  
+- View workout stats (distance, duration, pace/speed, elevation, cadence)  
+- Edit or delete individual workouts, or clear all data  
+- Persist data between sessions using localStorage  
+
+🗂 **Folder Path**  
+`starter/Mapty/starter`
+
+🖼 **App Preview**  
+<p align="center">
+  <img src="Pictures/mapty/mapty-1.png" width="420" height="290" style="object-fit: cover; margin-right:10px;" />
+  <img src="Pictures/mapty/mapty-2.png" width="420" height="290" style="object-fit: cover;" />
+</p>
+
+---
+## 🎲 Project: Pig Game
+
+A classic two-player dice game built with **JavaScript**, **HTML**, and **CSS**.  
+Players take turns rolling a dice to accumulate points.  
+The first to reach the target score (default 100) wins the game.
+
+### Key Concepts
+- DOM selection & manipulation
+- Event handling (button clicks & game state updates)
+- Game logic & state management
+- Conditional rendering and CSS class toggling
+
+### How to Play
+1. **Roll Dice**: Add the rolled number to your current score.  
+2. **Hold**: Save your current score to your total and pass the turn.  
+3. **Roll a 1**: Lose your current score and your turn.  
+4. First player to reach 100 points wins!
+
+🗂 **Folder Path**  
+`starter/Pig-Game`
+
+🖼 **Game Preview**  
+<p align="center">
+  <img src="Pictures/pig_game/pig-1.png" width="420" height="290" style="object-fit: cover; margin-right:10px;" />
+  <img src="Pictures/pig_game/pig-2.png" width="420" height="290" style="object-fit: cover;" />
+</p>
 
