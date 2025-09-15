@@ -147,3 +147,26 @@ The first to reach the target score (default 100) wins the game.
   <img src="Pictures/pig_game/pig-1.png" width="420" height="290" style="object-fit: cover; margin-right:10px;" />
   <img src="Pictures/pig_game/pig-2.png" width="420" height="290" style="object-fit: cover;" />
 </p>
+
+---
+## 🏦 Bankist Landing Page
+
+A sleek, modern landing page for a fictional digital bank, **Bankist**, built with **HTML**, **CSS**, and **JavaScript**.
+
+**Highlights**
+- Minimalist, responsive design with smooth scrolling
+- Section reveal animations and lazy-loaded images
+- Interactive navigation with sticky header
+- Optimized for performance and a clean user experience
+
+📂 **Folder Path**  
+`starter/Bankist-landing`
+
+🔗 **Live Demo**  
+[View Demo](https://lovely-pastelito-8fdbdc.netlify.app)
+
+🖼 **App Preview**  
+<p align="center">
+  <img src="Pictures/bankist-modal/bankist-page-1.png" width="520" height="460" style="object-fit:cover; margin-right:12px;" />
+  <img src="Pictures/bankist-modal/bankist-page-2.png" width="520" height="460" style="object-fit:cover;" />
+</p>
