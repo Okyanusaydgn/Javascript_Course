@@ -375,3 +375,86 @@ Promise.reject(new Error('Problem!')).catch(x => console.error(x));
 */
 
 // Promisifying the Geolocation API
+
+// 1-
+
+// navigator.geolocation.getCurrentPosition(
+//   position => console.log(position),
+//   err => console.error(err)
+// );
+
+// 2-
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     navigator.geolocation.getCurrentPosition(
+//       position => resolve(position),
+//       err => reject(err)
+//     );
+//   });
+// };
+
+// getPosition().then(pos => console.log(pos));
+
+// 3-
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// getPosition().then(pos => console.log(pos));
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      return fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+      );
+    })
+
+    .then(res => {
+      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      const city =
+        data.city || data.locality || data.principalSubdivision || 'Unknown';
+
+      // Log'da da ülke İSMİni göster
+      console.log(`You are in ${city} ${data.countryName || data.countryCode}`);
+
+      const name = data.countryName;
+      if (!name) throw new Error('countryName not provided by geocoder');
+
+      return fetch(
+        `https://restcountries.com/v2/name/${encodeURIComponent(name)}`
+      );
+    })
+    .then(res => {
+      if (!res.ok) throw new Error(`Country not found (${res.status})`);
+      return res.json(); // ← DÖNEN ŞEY: Array
+    })
+    .then(countries => {
+      if (!countries?.length) throw new Error('No country data');
+
+      const country = countries[0];
+
+      renderCountry(country); // ← Array’in ilk elemanını çiz || ana ülke
+
+      const neighbour = country.borders?.[0];
+      if (!neighbour) throw new Error('No neighbour found');
+
+      // komşu detayını getir
+      return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+    })
+    .then(res => {
+      if (!res.ok) throw new Error(`Neighbour not found (${res.status})`);
+      return res.json();
+    })
+    .then(nei => renderCountry(nei, 'neighbour'))
+    .catch(err => console.error(`${err.message} 🤯🤯`));
+};
+
+btn.addEventListener('click', whereAmI);
