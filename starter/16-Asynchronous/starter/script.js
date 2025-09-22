@@ -701,3 +701,44 @@ console.log('1: Will get location');
 //   alert(err.message);
 // }
 */
+
+/////////////////////////////////////////////
+// Running Promise in Parallel
+
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(` ${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+};
+
+const get3Countries = async (c1, c2, c3) => {
+  try {
+    const [a1, a2, a3] = await Promise.all([
+      getJSON(
+        `https://restcountries.com/v2/name/${encodeURIComponent(c1)}`,
+        'Country 1'
+      ),
+      getJSON(
+        `https://restcountries.com/v2/name/${encodeURIComponent(c2)}`,
+        'Country 2'
+      ),
+      getJSON(
+        `https://restcountries.com/v2/name/${encodeURIComponent(c3)}`,
+        'Country 3'
+      ),
+    ]);
+
+    const [d1] = a1;
+    const [d2] = a2;
+    const [d3] = a3;
+
+    console.log([d1.capital, d2.capital, d3.capital]);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// Bu çalışır:
+get3Countries('portugal', 'canada', 'tanzania');
