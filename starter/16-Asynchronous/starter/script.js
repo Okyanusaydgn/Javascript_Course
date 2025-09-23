@@ -820,6 +820,7 @@ TEST DATA: ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']. To test, turn of
 GOOD LUCK 😀
 */
 
+/*
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -911,3 +912,4 @@ const loadAll = async function (imgArr) {
 };
 
 loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+*/
