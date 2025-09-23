@@ -702,6 +702,8 @@ console.log('1: Will get location');
 // }
 */
 
+/*
+
 /////////////////////////////////////////////
 // Running Promise in Parallel
 
@@ -742,3 +744,56 @@ const get3Countries = async (c1, c2, c3) => {
 
 // Bu çalışır:
 get3Countries('portugal', 'canada', 'tanzania');
+*/
+
+//////////////////////////////////////////////////////////////////
+// Other Promise Combinators: race, allSettled and any
+
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(` ${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+};
+
+////////////////////////////////
+// Promise.race
+
+(async function () {
+  const [country] = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/italy`),
+    getJSON(`https://restcountries.com/v2/name/egypt`),
+    getJSON(`https://restcountries.com/v2/name/mexico`),
+  ]);
+  console.log(country);
+})();
+
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('request took too long!'));
+    }, sec * 1000);
+  });
+};
+
+Promise.race([
+  getJSON(`https://restcountries.com/v2/name/tanzania`),
+  timeout(1),
+])
+  .then(([country]) => console.log(country))
+  .catch(err => console.error(err));
+
+// Promise.allSettled
+Promise.allSettled([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another success'),
+]).then(([country]) => console.log(country));
+
+// Promise.any [ES2021]
+Promise.any([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another success'),
+]).then(value => console.log(value)); // "Success"
