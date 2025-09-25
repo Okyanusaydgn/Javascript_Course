@@ -13,13 +13,13 @@
 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
-// import add, { cart } from './shoppingCart.js';
+import add, { cart } from './shoppingCart.js';
 
-// add('pizza', 2);
-// add('bread', 5);
-// add('apples', 4);
+add('pizza', 2);
+add('bread', 5);
+add('apples', 4);
 
-// console.log(cart);
+console.log(cart);
 
 // Top-level await(ES2022)
 
@@ -61,6 +61,8 @@ const lastPost2 = await getLastPost();
 console.log(lastPost2);
 */
 
+/*
+//////////////////////////////////////////////////
 // The module Pattern
 
 const ShoppingCart2 = (function () {
@@ -88,3 +90,41 @@ const ShoppingCart2 = (function () {
 
 ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
+*/
+
+/////////////////////////////////////////
+// CommonJS Modules
+/*
+// Export
+export.addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} added to cart`);
+  };
+
+
+
+// Import
+const {addToCart} = require('./shoppingCart.js');
+*/
+
+import cloneDeep from 'lodash-es/cloneDeep';
+
+const state = {
+  cart: [
+    { product: 'bread', quantity: 5 },
+    { product: 'pizza', quantity: 5 },
+  ],
+  user: { loggedIn: true },
+};
+
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loggedIn = false;
+console.log(stateClone);
+
+console.log(stateDeepClone);
+
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}

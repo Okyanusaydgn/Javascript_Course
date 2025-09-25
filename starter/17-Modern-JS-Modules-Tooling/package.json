@@ -1,0 +1,14 @@
+{
+  "name": "17-modern-js-modules-tooling",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
