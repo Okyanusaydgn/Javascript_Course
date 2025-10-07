@@ -1,0 +1,17 @@
+{
+  "name": "forkify",
+  "author": "Okyanus Aydogan",
+  "version": "1.0.0",
+  "description": "Recipe application",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.0",
+    "parcel": "^2.16.0",
+    "sass": "^1.93.2"
+  }
+}
