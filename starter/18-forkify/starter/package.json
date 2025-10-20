@@ -3,11 +3,9 @@
   "author": "Okyanus Aydogan",
   "version": "1.0.0",
   "description": "Recipe application",
-  "private": true,
-  "license": "ISC",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir dist --public-url ./"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.0",
