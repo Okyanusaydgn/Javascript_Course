@@ -170,3 +170,30 @@ A sleek, modern landing page for a fictional digital bank, **Bankist**, built wi
   <img src="Pictures/bankist-modal/bankist-page-1.png" width="520" height="460" style="object-fit:cover; margin-right:12px;" />
   <img src="Pictures/bankist-modal/bankist-page-2.png" width="520" height="460" style="object-fit:cover;" />
 </p>
+
+---
+
+## 🍴 Forkify — Recipe Search App
+
+A fast, modern recipe search app, **Forkify**, built with **HTML**, **SCSS**, and **JavaScript** using the **MVC** pattern.
+
+**Highlights**
+- Clean **MVC** architecture (model, controller, modular views)
+- `async/await` with **fetch** for **GET/POST**
+- Hash-based navigation to recipe details
+- Pagination & persistent bookmarks (localStorage)
+- Add-your-own-recipe via modal form with validation
+
+**📁 Folder Path**  
+`starter/forkify`
+
+**🔗 Live Demo**  
+[View Demo](https://forkify-okyanus.netlify.app)
+
+**🖼 App Preview**
+<p align="center">
+  <img src="Pictures/forkify-1.png" width="520" height="460" style="object-fit:cover; margin-right:12px;" />
+  <img src="Pictures/forkify-2.png" width="520" height="460" style="object-fit:cover;" />
+</p>
+
+---
